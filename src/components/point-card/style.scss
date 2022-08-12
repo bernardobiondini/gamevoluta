@@ -1,0 +1,63 @@
+.request-card {
+
+  height: auto;
+
+  margin: 20px 0;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+
+  font-family: 'Georama', sans-serif;
+  font-weight: medium;
+  
+  .member-name {
+    flex: 4;
+    text-align: center;
+  }
+
+  .member-task {
+    flex: 4;
+    text-align: center;
+  }
+
+  .member-description {
+    flex: 5;
+    text-align: center;
+    margin-right: 10px;
+  }
+
+  .approve-buttons {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    button {
+      width: auto;
+      height: auto;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      padding-left: 10px;
+
+      > img {
+        height: 14px;
+      }
+    }
+  }
+}
+
+.gray-bc {
+  background-color: var(--gray);
+}
+
+.green-bc {
+  background: var(--green);
+}
+
+.red-bc {
+  background: var(--red);
+}

@@ -1,0 +1,51 @@
+header {
+  background: var(--blue);
+  padding: 5px 100px;
+
+  .header-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    > a {
+
+      > img {
+        height: 40px;
+      }
+
+    }
+
+  }
+
+  .header-list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    text-decoration: none;
+    gap: 20px;
+    color: var(--white);
+
+    > li {
+
+      > a {
+        font-family: 'Geo', sans-serif;
+        list-style: none;
+        text-decoration: none;
+        color: var(--white);
+      }
+
+    }
+    
+    .link-nav {
+
+      & + .link-nav {
+        border-left: 1px solid var(--gray);
+        padding-left: 20px;
+      }
+
+    }
+
+  }
+}

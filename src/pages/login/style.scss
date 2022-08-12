@@ -1,0 +1,67 @@
+#login-page {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--blue);
+
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--white);
+    border-radius: 80px;
+    width: 35%;
+
+    h1 {
+      font-family: 'Georama', sans-serif;
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 35.82px;
+      margin: 64px auto 20px auto;
+    }
+    
+    img {
+      height: 46px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 60%;
+      margin: 60px auto 30px auto;
+
+      input {
+        margin-bottom: 10px;
+        background: var(--gray);
+        border: none;
+        height: 30px;
+        padding: 0 5px;
+      }
+
+      label {
+        font-family: 'Geo', sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 22px
+      }
+
+      button {
+        margin: 20px 60px;
+        padding: 10px;
+        background: var(--blue);
+        color: var(--white);
+        border: none;
+        cursor: pointer;
+      }
+
+      > a {
+        font-family: 'Geo', sans-serif;
+        list-style: none;
+        text-decoration: none;
+        text-align: center;
+        color: var(--blue);
+      }
+    }
+  }
+}
