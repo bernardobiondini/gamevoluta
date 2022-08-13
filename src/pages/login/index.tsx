@@ -45,38 +45,46 @@ export function Home() {
       })
     }
     
-    navigate('/subir-pontos');
+    navigate('/');
+  }
+
+  async function handleAdmin() {
+    await signInWithGoogle();
+    navigate('/admin/pontos')
   }
 
     return (
-      <main id='login-page'>
-        <div className='login-container'>
-          <h1>CADASTRE-SE</h1>
-          <img src={logoGoogleImg} alt="Google" />
+      <div>
+        <main id='login-page'>
+          <div className='login-container'>
+            <h1>CADASTRE-SE</h1>
+            <img src={logoGoogleImg} alt="Google" />
 
-          <form id='form-login' onSubmit={handleCreateMember}>
-            <datalist id="diretorias">
-              <option value="Presidência" />
-              <option value="Vice-Presidência" />
-              <option value="Comercial" />
-              <option value="Projetos" />
-            </datalist>
-            <datalist id="casas" >
-                {allTeams.map(team => {
-                  return (
-                    <option key={team.team_id} value={team.name} />
-                  )
-                })}
+            <form id='form-login' onSubmit={handleCreateMember}>
+              <datalist id="diretorias">
+                <option value="Presidência" />
+                <option value="Vice-Presidência" />
+                <option value="Comercial" />
+                <option value="Projetos" />
               </datalist>
+              <datalist id="casas" >
+                  {allTeams.map(team => {
+                    return (
+                      <option key={team.team_id} value={team.name} />
+                    )
+                  })}
+                </datalist>
 
-            <label>DIRETORIA</label>
-            <input type="search" form='form-login' list="diretorias" required value={memberSector} onChange={event => setMemberSector(event.target.value)}/>
-            <label>CASA</label>
-            <input type="search" form='form-login' list="casas" required value={memberTeam} onChange={event => setMemberTeam(event.target.value)}/>
-            <Link to="/subir-pontos" >JÁ TEM LOGIN?</Link>
-            <button form='form-login' >CADASTRAR</button>
-          </form>
-        </div>
-      </main>
+              <label>DIRETORIA</label>
+              <input type="search" form='form-login' list="diretorias" required value={memberSector} onChange={event => setMemberSector(event.target.value)}/>
+              <label>CASA</label>
+              <input type="search" form='form-login' list="casas" required value={memberTeam} onChange={event => setMemberTeam(event.target.value)}/>
+              <Link to="/" >JÁ É CADSTRADO?</Link>
+              <button className="button-link" onClick={handleAdmin} >É DA VICE-PRESIDÊNCIA?</button>
+              <button form='form-login' >CADASTRAR</button>
+            </form>
+          </div>
+        </main>
+      </div>
     )
   }

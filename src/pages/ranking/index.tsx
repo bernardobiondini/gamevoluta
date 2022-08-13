@@ -10,6 +10,7 @@ import './style.scss';
 import { useState } from 'react';
 import { useTeams } from '../../hooks/useTeams';
 import { Head } from '../../components/header';
+import { Footer } from '../../components/footer';
 
 
 export function Ranking(){
@@ -26,7 +27,7 @@ export function Ranking(){
       <Head>
         <ul className='header-list'>
           <li className='link-nav'>
-            <Link to="/subir-pontos" >
+            <Link to="/" >
               SUBIR PONTOS
             </Link>
           </li>
@@ -83,10 +84,8 @@ export function Ranking(){
               })}
             </div>
           )}
-
-          
-        
       </main>
+      <Footer></Footer>
     </div>
   )
 }

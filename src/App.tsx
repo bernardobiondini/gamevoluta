@@ -22,8 +22,8 @@ function App() {
     <BrowserRouter>
       <AuthContextProvider>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/subir-pontos" element={ <UpPoints/>} />
+          <Route path="/" element={ <UpPoints/>} />
+          <Route path="/cadastro" element={<Home />} />
           <Route path="/ranking" element={ <Ranking/>} />
           <Route path="/requisicoes" element={ <Requisicoes/>} />
           <Route path="/ranking/member/:id" element={ <Member/>} />

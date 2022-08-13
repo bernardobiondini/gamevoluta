@@ -10,6 +10,7 @@ import logoVoluta from '../../assets/images/logoVoluta.png'
 
 import './style.scss'
 import { Head } from '../../components/header';
+import { Footer } from '../../components/footer';
 
 export function UpPoints(){
   const { memberExists, allMembers } = useMembers();
@@ -56,7 +57,7 @@ export function UpPoints(){
       <Head>
         <ul className='header-list'>
           <li className='link-nav'>
-            <Link to="/subir-pontos" >
+            <Link to="/" >
               SUBIR PONTOS
             </Link>
           </li>
@@ -100,8 +101,11 @@ export function UpPoints(){
               <textarea value={taskDescription} onChange={event => setTaskDescription(event.target.value)}/>
               <button >ENVIAR PONTO</button>
             </form>
+            <Link to="/cadastro">É membro da Voluta? Faça seu cadastro</Link>
           </div>
       </main>
+
+      <Footer></Footer>
     </div>
   )
 }

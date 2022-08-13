@@ -38,7 +38,7 @@ export function Member() {
       <Head>
         <ul className='header-list'>
           <li className='link-nav'>
-            <Link to="/subir-pontos" >
+            <Link to="/" >
               SUBIR PONTOS
             </Link>
           </li>
