@@ -10,6 +10,7 @@ import logoGoogleImg from '../../assets/images/google.svg';
 
 import './style.scss'
 import { useTeams } from '../../hooks/useTeams';
+import { Button } from '../../components/button';
 
 export function Home() {
   const navigate = useNavigate();
@@ -61,27 +62,30 @@ export function Home() {
             <img src={logoGoogleImg} alt="Google" />
 
             <form id='form-login' onSubmit={handleCreateMember}>
-              <datalist id="diretorias">
-                <option value="Presidência" />
-                <option value="Vice-Presidência" />
-                <option value="Comercial" />
-                <option value="Projetos" />
-              </datalist>
-              <datalist id="casas" >
-                  {allTeams.map(team => {
+              <label>DIRETORIA</label>
+              <select form='form-login' required value={memberSector} onChange={event => setMemberSector(event.target.value)}>
+                <option>Selecione sua diretoria</option>
+                <option value="Presidência">Presidência</option>
+                <option value="Vice-Presidência">Vice-Presidência</option>
+                <option value="Comercial">Comercial</option>
+                <option value="Projetos">Projetos</option>
+              </select>
+              {/* <input type="search" form='form-login' list="diretorias" required value={memberSector} onChange={event => setMemberSector(event.target.value)}/> */}
+              
+              <label>CASA</label>
+              <select form='form-login' required value={memberTeam} onChange={event => setMemberTeam(event.target.value)} >
+                <option>Selecione sua diretoria</option>
+                {allTeams.map(team => {
                     return (
-                      <option key={team.team_id} value={team.name} />
+                      <option key={team.team_id} value={team.name}>{team.name}</option>
                     )
                   })}
-                </datalist>
-
-              <label>DIRETORIA</label>
-              <input type="search" form='form-login' list="diretorias" required value={memberSector} onChange={event => setMemberSector(event.target.value)}/>
-              <label>CASA</label>
-              <input type="search" form='form-login' list="casas" required value={memberTeam} onChange={event => setMemberTeam(event.target.value)}/>
+              </select>
+              {/* <input type="search" form='form-login' list="casas" required value={memberTeam} onChange={event => setMemberTeam(event.target.value)}/> */}
+              
               <Link to="/" >JÁ É CADSTRADO?</Link>
               <button className="button-link" onClick={handleAdmin} >É DA VICE-PRESIDÊNCIA?</button>
-              <button form='form-login' >CADASTRAR</button>
+              <Button type='submit' form='form-login'>CADASTRAR</Button>
             </form>
           </div>
         </main>

@@ -1,0 +1,25 @@
+.button-component {
+  margin: 20px 60px;
+  padding: 10px;
+  background: var(--blue);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+
+  
+  transition: filter 0.2s;
+}
+
+.button-component:hover {
+  cursor: pointer;
+  border-radius: 10px;
+  background: var(--gray);
+  color: var(--blue);
+  filter: brightness(.8);
+}
+
+.button-component:focus {
+  filter: brightness(.5);
+  background: var(--gray);
+  color: var(--blue);
+}

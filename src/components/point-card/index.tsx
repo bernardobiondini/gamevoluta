@@ -26,9 +26,11 @@ export function PointCard({
       <p className='member-name'>{member_name}</p>
       <p className='member-task'>{task}</p>
       <p className='member-description'>{description}</p>
-      <div className="approve-buttons">
-        {children}
-      </div>
+      {children && (
+        <div className="approve-buttons">
+          {children}
+        </div>
+      )}
     </div>
   )
 }

@@ -27,17 +27,17 @@ export function MemberCard({
   children,
 }: MemberProps) {
 
-  return (
-    
-    
+  return (  
       <div className="member-card">
         <img className="member-img" src={avatar} alt="" />
         <p className="member-name">{name}</p>
         <p className="member-team">{team}</p>
         <p className="member-points">{points}</p>
-        <div className="approve-buttons">
-          {children}
-        </div>
+        {children && (
+          <div className="approve-buttons">
+            <span>{children}</span>
+          </div>
+        )}
       </div>
     
   )

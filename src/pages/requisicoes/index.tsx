@@ -16,25 +16,7 @@ export function Requisicoes(){
 
   return (
     <div>
-     <Head>
-        <ul className='header-list'>
-          <li className='link-nav'>
-            <Link to="/" >
-              SUBIR PONTOS
-            </Link>
-          </li>
-          <li className='link-nav'>
-            <Link to="/ranking" >
-              RANKING
-            </Link>
-          </li>
-          <li className='link-nav'>
-            <Link to="/requisicoes" >
-              REQUISIÇÕES
-            </Link>
-          </li>
-        </ul>
-      </Head>
+     <Head />
       <main className='requisicoes-main'>
         <div className="requests-list">
           {allPoints.map(points => {

@@ -12,7 +12,7 @@
     align-items: center;
     justify-content: center;
 
-    > h1 {
+    >h1 {
       width: 30%;
       font-family: 'Georama', sans-serif;
       font-weight: bold;
@@ -36,19 +36,19 @@
         line-height: 20px
       }
 
-      > input + textarea {
+      > input+textarea {
         margin: 20px 0;
       }
 
-      > input {
+      > select {
         border: none;
         padding: 5px;
         min-height: 20px;
         background: var(--gray);
         font-family: 'Geo', sans-serif;
         font-weight: 500;
-        font-size: 14px;
-        line-height: 16px
+        font-size: 16px;
+        line-height: 18px
       }
 
       > textarea {
@@ -60,20 +60,11 @@
         border: none;
         min-height: 130px;
         background: var(--gray);
-        resize: none; 
+        resize: none;
       }
 
       button {
         margin: 20px 70% 20px 0;
-        padding: 10px;
-        background: var(--blue);
-        color: var(--white);
-        border: none;
-      }
-
-      button:hover {
-        background: var(--gray);
-        color: var(--blue);
       }
 
     }
@@ -88,6 +79,123 @@
       color: var(--blue);
     }
 
+  }
+
+}
+
+@media screen and (max-width: 1200px) {
+  .upPoints-main {
+    .form-content {
+      >form {
+        button {
+          margin: 20px 60% 20px 0;
+        }
+      }
+    }
+  }
+
+}
+
+@media screen and (max-width: 992px) {
+  .upPoints-main {
+    .form-content {
+      >form {
+        button {
+          margin: 20px 40% 20px 0;
+        }
+      }
+    }
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .upPoints-main .form-content {
+
+    >form {
+      width: 80%;
+
+      button {
+        margin: 20px 40% 20px 0;
+      }
+
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .upPoints-main {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    gap: 10px;
+
+    .title-content {
+      margin-top: 20px;
+
+      > h1 {
+        width: 70%;
+        text-align: center;
+      }
+    }
+
+    .form-content {
+
+      >form {
+        width: auto;
+  
+        button {
+          margin: 20px 10%;
+        }
+  
+      }
+      > a {
+        display: block;
+        width: 70%;
+        text-align: center;
+        margin: 10px auto 20px auto;
+      }
+    }
+
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .upPoints-main {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    gap: 10px;
+
+    .title-content {
+      margin-top: 40px;
+
+      > h1 {
+        width: 100%;
+      }
+    }
+
+    .form-content {
+      margin-top: 10px;
+
+      > form {
+        width: auto;
+
+        button {
+          margin: 20px 20%;
+        }
+
+      }
+
+      > a {
+        display: block;
+        width: 70%;
+        text-align: center;
+        margin: 10px auto 20px auto;
+      }
+    }
   }
 
 }

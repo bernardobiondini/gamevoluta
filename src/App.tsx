@@ -15,6 +15,7 @@ import { AdminTeams } from "./pages/admin/admin-teams";
 import { Member } from "./pages/member";
 
 import './services/firebase';
+import { Head } from "./components/header";
 
 
 function App() {
@@ -22,8 +23,8 @@ function App() {
     <BrowserRouter>
       <AuthContextProvider>
         <Routes>
-          <Route path="/" element={ <UpPoints/>} />
           <Route path="/cadastro" element={<Home />} />
+          <Route path="/" element={ <UpPoints/>} />
           <Route path="/ranking" element={ <Ranking/>} />
           <Route path="/requisicoes" element={ <Requisicoes/>} />
           <Route path="/ranking/member/:id" element={ <Member/>} />

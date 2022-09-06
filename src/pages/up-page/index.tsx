@@ -11,10 +11,13 @@ import logoVoluta from '../../assets/images/logoVoluta.png'
 import './style.scss'
 import { Head } from '../../components/header';
 import { Footer } from '../../components/footer';
+import { Button } from '../../components/button';
 
 export function UpPoints(){
   const { memberExists, allMembers } = useMembers();
   const allTasks = useTasks();
+
+  const [ selectedMember, setSelectedMember] = useState('');
 
   const [ memberName, setMemberName ] = useState('');
   const [ memberTask, setMemberTask ] = useState('');
@@ -27,12 +30,20 @@ export function UpPoints(){
     const database = getDatabase();
     const pointsRef =  ref(database, 'points/');
 
+    console.log("cheguei aqui" + selectedMember);
+
+    // verificar se option/select possui essa funcionalidade
+
+
+    // e possivel ter acesso a quantidade de pontos já na hora em que a task é escolhida
+    // passar objeto, ao invéd de uma string (nome da task) ?????
     allTasks.map(task => {
       if(task.task_name === memberTask){
         taskPoint = task.task_point;
       }
     })
 
+    // é possivel otimizar essa parte tambem? passando um objeto membro????
     allMembers.map(async member => {
       if(member.name === memberName) {
         await push(pointsRef, {
@@ -54,32 +65,14 @@ export function UpPoints(){
 
   return (
     <div id='upPoints-page'>
-      <Head>
-        <ul className='header-list'>
-          <li className='link-nav'>
-            <Link to="/" >
-              SUBIR PONTOS
-            </Link>
-          </li>
-          <li className='link-nav'>
-            <Link to="/ranking" >
-              RANKING
-            </Link>
-          </li>
-          <li className='link-nav'>
-            <Link to="/requisicoes" >
-              REQUISIÇÕES
-            </Link>
-          </li>
-        </ul>
-      </Head>
+      <Head />
       <main className='upPoints-main'>
           <div className='title-content'>
             <h1>SUBA SEUS PONTOS</h1>
           </div>
           <div className='form-content'>
             <form id="task-form" onSubmit={handleSubmitPoint}>
-              <datalist id="tasks" >
+              {/* <datalist id="tasks" >
                 {allTasks.map(task => {
                   return (
                     <option key={task.task_id} value={task.task_name} />
@@ -92,14 +85,30 @@ export function UpPoints(){
                     <option key={member.member_id} value={member.name} />
                   )
                 })}
-              </datalist>
-              <label >MEMBRO</label>
-              <input type="search" form='task-form' list="members" value={memberName} onChange={event => setMemberName(event.target.value)}/>
-              <label>TAREFA</label>
-              <input type="search" form='task-form' list="tasks" value={memberTask} onChange={event => setMemberTask(event.target.value)} />
-              <label>DESCRIÇÃO</label>
-              <textarea value={taskDescription} onChange={event => setTaskDescription(event.target.value)}/>
-              <button >ENVIAR PONTO</button>
+              </datalist> */}
+              <label htmlFor='member-select' >MEMBRO</label>
+              <select name="selectedMember" form='task-form' id="member-select" value={memberName} onChange={event => setMemberName(event.target.value)}>
+                <option >Selecione o nome do membro</option>
+                {allMembers.map(member => {
+                  return (
+                    <option key={member.member_id} value={member.name}>{member.name}</option>
+                  )
+                })}
+              </select>
+              {/* <input type="search" form='task-form' list="members" value={memberName} onChange={event => setMemberName(event.target.value)}/> */}
+              <label htmlFor='task-select' >TAREFA</label>
+              <select name="selectTask" form='task-form' id="task-select" onChange={event => setMemberTask(event.target.value)} >
+                <option >Selecione a tarefa realizada</option>
+                {allTasks.map(task => {
+                  return (
+                    <option key={task.task_id} value={task.task_name}>{task.task_name}</ option>
+                  )
+                })}
+              </select>
+              {/* <input type="search" form='task-form' list="tasks" value={memberTask} onChange={event => setMemberTask(event.target.value)} /> */}
+              <label htmlFor='textarea-form' >DESCRIÇÃO</label>
+              <textarea id='textarea-form' form='task-form' value={taskDescription} onChange={event => setTaskDescription(event.target.value)} />
+              <Button  type='submit' form='task-form' >ENVIAR PONTO</Button>
             </form>
             <Link to="/cadastro">É membro da Voluta? Faça seu cadastro</Link>
           </div>
