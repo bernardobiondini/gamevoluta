@@ -1,4 +1,5 @@
-import { ReactNode } from "react";
+import React from "react";
+import { ReactNode, useEffect, useState } from "react";
 
 import { Link } from 'react-router-dom';
 import logoVoluta from '../../assets/images/logoVoluta.svg'
@@ -6,6 +7,13 @@ import logoVoluta from '../../assets/images/logoVoluta.svg'
 import './style.scss';
 
 export function Head(){
+
+  const [ mobileMenu, setMobileMenu ] = useState(false);
+
+  function handleMenu() {
+    mobileMenu ? setMobileMenu(false) : setMobileMenu(true)
+  }
+
   return (
     <header>
         <div className="header-content">
@@ -13,7 +21,12 @@ export function Head(){
             <img src={logoVoluta} alt="" />
           </Link>
           <nav>
-            <ul className='header-list'>
+            <button className="hamb-menu" onClick={handleMenu} >
+              <div></div>
+              <div></div>
+              <div></div>
+            </button>
+            <ul id="header-list" className={`${mobileMenu ? 'active' : 'inactive'}`}>
               <li className='link-nav'>
                 <Link to="/" >
                   SUBIR PONTOS

@@ -18,7 +18,22 @@ header {
 
   }
 
-  .header-list {
+  .hamb-menu {
+    display: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    div {
+      content: "";
+      width: 32px;
+      height: 2px;
+      background: var(--white);
+      margin: 8px;
+    }
+  } 
+
+  #header-list {
     display: flex;
     flex-direction: row;
     list-style: none;
@@ -66,6 +81,15 @@ header {
 @media screen and (max-width: 600px) {
   header {
     padding: 5px 5%;
+
+    .hamb-menu {
+      display: block;
+    }
+
+    #header-list .active {
+      display: flex;
+      background: var(--gray);
+    }
   
     .header-content {
       display: flex;
@@ -83,34 +107,34 @@ header {
   
     }
   
-    .header-list {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      list-style: none;
-      text-decoration: none;
-      gap: 3px;
-      color: var(--white);
+    // .header-list {
+    //   display: flex;
+    //   flex-direction: row;
+    //   align-items: center;
+    //   list-style: none;
+    //   text-decoration: none;
+    //   gap: 3px;
+    //   color: var(--white);
   
-      > li {
+    //   > li {
   
-        > a {
-          text-align: center;
-        }
+    //     > a {
+    //       text-align: center;
+    //     }
   
-      }
+    //   }
       
-      .link-nav {
+    //   .link-nav {
   
-        & + .link-nav {
-          border-left: 1px solid var(--gray);
-          padding-left: 2px;
-          margin-right: 2px;
-        }
+    //     & + .link-nav {
+    //       border-left: 1px solid var(--gray);
+    //       padding-left: 2px;
+    //       margin-right: 2px;
+    //     }
   
-      }
+    //   }
   
-    }
+    // }
   }
 }
 
