@@ -17,3 +17,11 @@ Projeto desenvolvido utilizando as seguintes tecnologias:
 - [React](https://reactjs.org)
 - [Firebase](https://firebase.google.com/)
 - [TypeScript](https://www.typescriptlang.org/)
+
+## Imagens
+
+<div align="center" flex="row">
+  <img src="https://user-images.githubusercontent.com/83314995/188524418-45f1a833-d060-4e07-8a6e-1dcc570e2bef.png" height=250px/>
+  <img src="https://user-images.githubusercontent.com/83314995/188525057-01e6a59a-7879-4cbe-a845-30c9d5f0258f.png" height=250px/>
+  <img src="https://user-images.githubusercontent.com/83314995/188524548-f3940060-ea58-47ab-8b49-63b175546320.png" height=250px/>
+</ div>
