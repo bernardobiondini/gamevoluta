@@ -16,35 +16,33 @@ export function Head(){
 
   return (
     <header>
-        <div className="header-content">
-          <Link to="/" >
-            <img src={logoVoluta} alt="" />
-          </Link>
-          <nav>
-            <button className="hamb-menu" onClick={handleMenu} >
-              <div></div>
-              <div></div>
-              <div></div>
-            </button>
-            <ul id="header-list" className={`${mobileMenu ? 'active' : 'inactive'}`}>
-              <li className='link-nav'>
-                <Link to="/" >
-                  SUBIR PONTOS
-                </Link>
-              </li>
-              <li className='link-nav'>
-                <Link to="/ranking" >
-                  RANKING
-                </Link>
-              </li>
-              <li className='link-nav'>
-                <Link to="/requisicoes" >
-                  REQUISIÇÕES
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
+      <Link to="/" >
+        <img src={logoVoluta} alt="" />
+      </Link>
+      <nav id='nav'>
+        <button className="hamb-menu" onClick={handleMenu} >
+          <div></div>
+          <div></div>
+          <div></div>
+        </button>
+        <ul id="header-list" className={`${mobileMenu ? 'active' : 'inactive'}`}>
+          <li className='link-nav'>
+            <Link to="/" >
+              SUBIR PONTOS
+            </Link>
+          </li>
+          <li className='link-nav'>
+            <Link to="/ranking" >
+              RANKING
+            </Link>
+          </li>
+          <li className='link-nav'>
+            <Link to="/requisicoes" >
+              REQUISIÇÕES
+            </Link>
+          </li>
+        </ul>
+      </nav>
       </header>
   )
 }
