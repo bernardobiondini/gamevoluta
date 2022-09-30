@@ -64,7 +64,7 @@ export function UpPoints(){
   }
 
   return (
-    <div id='upPoints-page'>
+    <>
       <Head />
       <main className='upPoints-main'>
           <div className='title-content'>
@@ -115,6 +115,6 @@ export function UpPoints(){
       </main>
 
       <Footer></Footer>
-    </div>
+    </>
   )
 }

@@ -34,7 +34,7 @@ export function Member() {
   const allPoints = usePoints();
   
   return (
-    <div>
+    <>
       <Head />
       <main className='member-main'>
         <h1>Membro</h1>
@@ -65,6 +65,6 @@ export function Member() {
           )
         })}
       </main>
-    </div>
+    </>
   )
 }

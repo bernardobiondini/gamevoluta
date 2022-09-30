@@ -67,12 +67,17 @@
   }
 }
 
-@media screen and (max-width: 600px) {}
-
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 600px) {
   .request-card {
     flex-direction: column;
-    justify-content: space-between;
-    gap: 10%;
+    gap: 20px;
+
+    .approve-buttons {
+      gap: 10px;
+    }
   }
+}
+
+@media screen and (max-width: 414px) {
+  
 }

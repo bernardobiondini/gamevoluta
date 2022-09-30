@@ -7,36 +7,40 @@ a {
   display: flex;
   flex-direction: row;
   align-items: center;
+  width: 100%;
 
   background: var(--gray);
   
-
+  gap: 5px;
   margin: 20px 0;
   padding: 20px;
 
   font-family: 'Georama', sans-serif;
   font-weight: medium;
-
-  > img {
-    margin-right: 10px;
-    max-height: 40px;
-    max-width: 40px;
-    border-radius: 50%;
-  }
   
   .member-img {
-    flex: 1;
+    flex: 0.5;
+
+    > img {
+      margin-right: 10px;
+      max-height: 40px;
+      max-width: 40px;
+      border-radius: 50%;
+    }
   }
   .member-name {
-    flex: 2;
+    flex: 1;
+    text-align: center;
   }
 
   .member-team {
     flex: 1;
+    text-align: center;
   }
 
   .member-points {
     flex: 1;
+    text-align: center;
   }
 
   .approve-buttons{
@@ -55,6 +59,17 @@ a {
       > img {
         height: 14px;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .member-card {
+    flex-direction: column;
+    gap: 20px;
+
+    .member-name {
+      text-align: center;
     }
   }
 }

@@ -15,7 +15,7 @@ export function Requisicoes(){
   const allPoints = usePoints();
 
   return (
-    <div>
+    <>
      <Head />
       <main className='requisicoes-main'>
         <div className="requests-list">
@@ -35,6 +35,6 @@ export function Requisicoes(){
         </div>
       </main>
       <Footer></Footer>
-    </div>
+    </>
   )
 }

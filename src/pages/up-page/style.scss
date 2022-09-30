@@ -1,5 +1,5 @@
 .upPoints-main {
-  height: 90vh;
+  margin-top: 10%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -24,7 +24,7 @@
     flex: 6;
 
     > form {
-      width: 60%;
+      width: 80%;
       display: flex;
       flex-direction: column;
 
@@ -113,7 +113,7 @@
   .upPoints-main .form-content {
 
     >form {
-      width: 80%;
+      width: 90%;
 
       button {
         margin: 20px 40% 20px 0;

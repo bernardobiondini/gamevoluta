@@ -29,7 +29,9 @@ export function MemberCard({
 
   return (  
       <div className="member-card">
-        <img className="member-img" src={avatar} alt="" />
+        <div className="member-img" >
+          <img src={avatar} alt="" />
+        </div>
         <p className="member-name">{name}</p>
         <p className="member-team">{team}</p>
         <p className="member-points">{points}</p>

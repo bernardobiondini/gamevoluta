@@ -23,7 +23,7 @@ export function Ranking(){
   allTeams.sort( (a, b) => (a.total_points > b.total_points) ? -1 : 1);
 
   return (
-    <div>
+    <>
       <Head />
       <main className='ranking-main'>
         <div className="tags">
@@ -68,6 +68,6 @@ export function Ranking(){
           )}
       </main>
       <Footer></Footer>
-    </div>
+    </>
   )
 }
